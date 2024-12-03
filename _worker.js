@@ -14,7 +14,7 @@ let enableSocks = false;
 let fakeUserID ;
 let fakeHostName ;
 let noTLS = 'false'; 
-const expire = 4102329600;//2099-12-31
+const expire = 4102329600;//
 let proxyIPs;
 let socks5s;
 let go2Socks5s = [
@@ -1228,11 +1228,11 @@ async function 生成配置信息(userID, hostName, sub, UA, RproxyIP, _url, env
 
 			return randomIP.join('.');
 		}
-		addresses = addresses.concat('127.0.0.1:1234#CFnat');
+		// addresses = addresses.concat('127.0.0.1:1234#CFnat');
 		if (hostName.includes(".workers.dev")) {
-			addressesnotls = addressesnotls.concat(cfips.map(cidr => generateRandomIPFromCIDR(cidr) + '#CF随机节点'));
+			addressesnotls = addressesnotls.concat(cfips.map(cidr => generateRandomIPFromCIDR(cidr) + '#'));
 		} else {
-			addresses = addresses.concat(cfips.map(cidr => generateRandomIPFromCIDR(cidr) + '#CF随机节点'));
+			addresses = addresses.concat(cfips.map(cidr => generateRandomIPFromCIDR(cidr) + '#'));
 		}
 	}
 	const uuid = (_url.pathname == `/${env.KEY}`) ? env.KEY : userID;
